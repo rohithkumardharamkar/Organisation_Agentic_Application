@@ -1,93 +1,228 @@
 # Organisation_Agentic_Application
 
+Organisation_Agentic_Application is a full-stack agentic workforce operations platform. In the current product flow, the app is presented as **Yottaflex Workforce OS**: a role-aware workspace for HR teams, reporting managers, process engineers, and employees, with an AI copilot layered on top of workforce data and business workflows.
 
+The repository contains:
+
+- A **FastAPI backend** for authentication, dashboards, timesheets, knowledge management, AI operations, and evaluation runs
+- A **React + Vite frontend** for role-based dashboards and operational workflows
+- An **agent orchestration layer** built around LangGraph/LangChain
+- A **local evaluation harness** for measuring routing, tool usage, RAG quality, and task success
+
+## Core capabilities
+
+- Role-based login and protected navigation
+- Workforce, talent, project, and executive dashboard views
+- AI copilot with streamed responses and approval-aware workflow support
+- Timesheet submission, leave management, and manager approval flows
+- Knowledge-base upload, indexing, listing, and deletion
+- AI operations telemetry, approval queues, and metrics
+- Offline agent evaluation suite with stored run results
+
+## Product modules
+
+The frontend currently exposes these major product areas:
+
+- `Executive Command` for high-level HR and leadership metrics
+- `Workforce Intel` for workforce health and staffing visibility
+- `Project Intel` for project-level operational tracking
+- `Talent Intel` for hiring and people insights
+- `Timesheet` for employee time entry and leave workflows
+- `Manager Approvals` for approvals and exception handling
+- `Process Engineering` for process reports and operational controls
+- `Data Directory` for organizational documents
+- `AI Copilot` for conversational assistance
+- `AI Operations` for audit-style visibility into AI actions
+
+## Architecture
+
+### Backend
+
+- **Framework:** FastAPI
+- **Database:** SQLite with SQLAlchemy async engine
+- **Agent stack:** LangChain, LangGraph, Groq-backed LLM calls
+- **Document retrieval:** local uploads + Qdrant-backed indexing
+- **Auth:** JWT-style bearer token flow with role-based access checks
+- **Evaluation:** dataset-driven evaluation runner with persisted results
+
+### Frontend
+
+- **Framework:** React 19 + TypeScript + Vite
+- **State/data:** React Query + Axios
+- **Routing:** React Router
+- **UI:** Tailwind CSS, Lucide icons, Framer Motion, Recharts
+
+## Repository layout
+
+```text
+.
+├── backend
+│   ├── requirements.txt
+│   └── app
+│       ├── api/                # FastAPI route modules
+│       ├── evaluation/         # Evaluation datasets and runners
+│       ├── models/             # SQLAlchemy models
+│       ├── repositories/       # Persistence helpers
+│       ├── schemas/            # Request/response schemas
+│       ├── services/           # Chat, reporting, Qdrant, prediction services
+│       ├── src/
+│       │   ├── agents/         # Agent routing/orchestration
+│       │   ├── core/           # Config, DB, security, seed logic
+│       │   ├── memory/         # Memory modules
+│       │   ├── models/         # Evaluation + operational DB models
+│       │   ├── observability/  # LangSmith hooks
+│       │   ├── tools/          # Agent tools
+│       │   └── workflow/       # Graph workflow
+│       ├── main.py             # FastAPI app entry point
+│       └── test_*.py           # Backend tests
+├── frontend
+│   ├── src
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── lib/
+│   │   └── pages/
+│   └── package.json
+└── README.md
+```
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### Prerequisites
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- Python 3.10+
+- Node.js 20+
+- npm 10+
 
-## Add your files
+### Backend setup
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp app/.env.example app/.env
+cd app
+uvicorn main:app --reload --port 8000
 ```
-cd existing_repo
-git remote add origin https://git.yottaflex.ai/ai-agent-hackathon/byte-brigade/finpilot.git
-git branch -M main
-git push -uf origin main
+
+What happens on startup:
+
+- database tables are created automatically
+- lightweight schema upgrades are applied for uploaded document fields
+- seed data is loaded for local development
+
+Backend base URL:
+
+```text
+http://localhost:8000
 ```
 
-## Integrate with your tools
+API root:
 
-- [ ] [Set up project integrations](https://git.yottaflex.ai/ai-agent-hackathon/byte-brigade/finpilot/-/settings/integrations)
+```text
+http://localhost:8000/api/v1
+```
 
-## Collaborate with your team
+### Frontend setup
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+Open a second terminal:
 
-## Test and Deploy
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-Use the built-in continuous integration in GitLab.
+Frontend default URL:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+```text
+http://localhost:5173
+```
 
-***
+Note: the frontend API client is currently hardcoded to `http://localhost:8000/api/v1` in `frontend/src/lib/api.ts`.
 
-# Editing this README
+## Environment variables
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+The backend loads environment variables from `backend/app/.env`.
 
-## Suggestions for a good README
+Minimum local configuration:
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+```env
+GROQ_API_KEY=
+EMAIL_USER=
+EMAIL_PASSWORD=
+DATABASE_URL=sqlite+aiosqlite:///./data/database.db
+```
 
-## Name
-Choose a self-explaining name for your project.
+Useful optional settings supported by the backend config:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+- `LANGSMITH_API_KEY`
+- `LANGCHAIN_TRACING_V2`
+- `LANGCHAIN_PROJECT`
+- `OLLAMA_URL`
+- `OLLAMA_MODEL`
+- `LOCAL_OLLAMA_URL`
+- `EMAIL_HOST`
+- `EMAIL_PORT`
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Main API areas
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+The backend currently exposes routes for:
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+- `/auth` - signup, login, mock Google login, mock OTP login, forgot password
+- `/copilot` - chat history, status, streamed chat, approval continuation
+- `/dashboards` - executive, workforce, projects, talent, role-based views
+- `/workforce` - employee and project data
+- `/timesheets` - timesheets, bulk entry, stats, leave flows, approvals
+- `/process` - process report creation and retrieval
+- `/knowledge` - document upload, listing, and deletion
+- `/ai-ops` - activity feed, approvals, registry, metrics
+- `/evaluations` - evaluation run orchestration and results lookup
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+## Agent and evaluation flow
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+The copilot stack uses the `backend/app/src` modules for routing, memory, tools, and workflow execution.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Highlights:
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+- chat responses are streamed from the backend using server-sent events
+- approval-required steps can pause and resume through the `/copilot/approve` flow
+- evaluation datasets live in `backend/app/evaluation/dataset`
+- evaluation runs write summary and per-case metrics into SQLite tables
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## Testing and validation
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### Backend tests
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+From `backend/app`:
+
+```bash
+pytest test_api_new.py test_hr_tools.py test_workforce_api.py
+```
+
+### Frontend checks
+
+From `frontend`:
+
+```bash
+npm run build
+npm run lint
+```
+
+## Implementation notes
+
+- Knowledge-base upload and delete actions are restricted to the `HR` role.
+- The current Google login and OTP login flows are mock/local-development implementations.
+- SQLite is used for local persistence; generated DB files are intentionally ignored in Git.
+- Uploaded documents and vector-store data are local runtime artifacts and should not be committed.
+
+## Suggested next improvements
+
+- Move the frontend API base URL to environment configuration
+- Replace mock social/OTP auth with production identity providers
+- Add deployment profiles for Postgres and managed vector storage
+- Expand automated tests for copilot approval and knowledge RAG flows
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+No license has been defined yet.
