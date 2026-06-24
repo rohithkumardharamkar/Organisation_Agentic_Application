@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1,
+    "role": "Process Engineer",
+    "query": "Analyze and run diagnostics on our current sprint timesheet submissions.",
+    "rbac_allowed": true,
+    "expected_agent": "process_agent",
+    "expected_tool": "run_timesheet_diagnostics",
+    "description": "Process Engineer auditing timesheet workflow process health"
+  },
+  {
+    "id": 2,
+    "role": "Process Engineer",
+    "query": "Generate a timesheet diagnostics report for our current sprint.",
+    "rbac_allowed": true,
+    "expected_agent": "process_agent",
+    "expected_tool": "run_timesheet_diagnostics",
+    "description": "Process Engineer requesting audit reports"
+  },
+  {
+    "id": 3,
+    "role": "Process Engineer",
+    "query": "Verify if timesheet submission rates meet the SLA thresholds.",
+    "rbac_allowed": true,
+    "expected_agent": "process_agent",
+    "expected_tool": "verify_sla_compliance",
+    "description": "Process Engineer auditing timesheet SLA compliance"
+  },
+  {
+    "id": 4,
+    "role": "HR",
+    "query": "Perform workforce planning analysis for next quarter hiring demand.",
+    "rbac_allowed": true,
+    "expected_agent": "workforce_planning_agent",
+    "expected_tool": "forecast_hiring_demand",
+    "description": "HR performing workforce planning"
+  },
+  {
+    "id": 5,
+    "role": "HR",
+    "query": "Generate executive insights report on department resource gaps.",
+    "rbac_allowed": true,
+    "expected_agent": "executive_insights_agent",
+    "expected_tool": "generate_insights",
+    "description": "HR requesting C-suite insights"
+  },
+  {
+    "id": 6,
+    "role": "Reporting Manager",
+    "query": "Run a workforce capacity planning study for my engineering team.",
+    "rbac_allowed": true,
+    "expected_agent": "workforce_planning_agent",
+    "expected_tool": "get_capacity_plan",
+    "description": "Manager requesting workforce planning"
+  },
+  {
+    "id": 7,
+    "role": "HR",
+    "query": "Review skill gaps and generate a training budget requirement.",
+    "rbac_allowed": true,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_skill_gaps",
+    "description": "HR analyzing skill intelligence budgets"
+  },
+  {
+    "id": 8,
+    "role": "Reporting Manager",
+    "query": "Optimize my department resource allocation to minimize bench count.",
+    "rbac_allowed": true,
+    "expected_agent": "resource_optimization_agent",
+    "expected_tool": "optimize_allocations",
+    "description": "Manager running resource optimization"
+  },
+  {
+    "id": 9,
+    "role": "Process Engineer",
+    "query": "Generate a process efficiency report on team timesheet logging speed.",
+    "rbac_allowed": true,
+    "expected_agent": "process_agent",
+    "expected_tool": "analyze_process_speed",
+    "description": "Process Engineer analyzing speed logs"
+  },
+  {
+    "id": 10,
+    "role": "HR",
+    "query": "Perform an audit check on all approved leaves this month.",
+    "rbac_allowed": true,
+    "expected_agent": "hr_agent",
+    "expected_tool": "get_leave_records",
+    "description": "HR auditing leave records"
+  },
+  {
+    "id": 11,
+    "role": "Reporting Manager",
+    "query": "Check if our active projects are running over planned hours.",
+    "rbac_allowed": true,
+    "expected_agent": "project_risk_agent",
+    "expected_tool": "get_at_risk_projects",
+    "description": "Manager checking project risk indicators"
+  },
+  {
+    "id": 12,
+    "role": "HR",
+    "query": "List the top 3 critical projects that require skill remediation.",
+    "rbac_allowed": true,
+    "expected_agent": "project_risk_agent",
+    "expected_tool": "get_remediation_needs",
+    "description": "HR pulling risk remediation summaries"
+  },
+  {
+    "id": 13,
+    "role": "Process Engineer",
+    "query": "Audit sprint backlog velocity against timesheet hours logged.",
+    "rbac_allowed": true,
+    "expected_agent": "process_agent",
+    "expected_tool": "analyze_velocity",
+    "description": "Process Engineer auditing velocity"
+  },
+  {
+    "id": 14,
+    "role": "Reporting Manager",
+    "query": "Show me the list of available junior designers on bench.",
+    "rbac_allowed": true,
+    "expected_agent": "resource_optimization_agent",
+    "expected_tool": "get_bench_resources",
+    "description": "Manager querying bench resources"
+  },
+  {
+    "id": 15,
+    "role": "HR",
+    "query": "Are there any software developers on bench who know AWS?",
+    "rbac_allowed": true,
+    "expected_agent": "resource_optimization_agent",
+    "expected_tool": "get_bench_resources",
+    "description": "HR matching bench resources to skills"
+  },
+  {
+    "id": 16,
+    "role": "Reporting Manager",
+    "query": "What is the skill gap analysis for Nitin Verma?",
+    "rbac_allowed": true,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_individual_skill_gap",
+    "description": "Manager analyzing single resource skill gap"
+  },
+  {
+    "id": 17,
+    "role": "Process Engineer",
+    "query": "Generate a sprint timesheet diagnostics report for Mobile App Replatforming.",
+    "rbac_allowed": true,
+    "expected_agent": "process_agent",
+    "expected_tool": "run_timesheet_diagnostics",
+    "description": "Process Engineer requesting specific project diagnostics"
+  }
+]

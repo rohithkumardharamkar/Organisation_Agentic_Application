@@ -1,0 +1,49 @@
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+backend/venv/
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+
+# Logs and local reports
+*.log
+.deepeval/
+backend/app/.deepeval/
+backend/app/csv/*.csv
+backend/app/evaluation_reports/
+frontend/build_output.txt
+
+# Local uploads and vector stores
+backend/app/uploaded_documents/
+backend/app/data/qdrant_db/
+backend/app/data/qdrant_db_temp/
+
+# SQLite and runtime databases
+*.db
+*.db-shm
+*.db-wal
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/node-v*/
+frontend/dist/
+dist/
+
+# Misc local files
+*.local

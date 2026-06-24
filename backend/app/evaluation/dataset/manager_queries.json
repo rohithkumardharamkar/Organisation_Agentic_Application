@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1,
+    "role": "Reporting Manager",
+    "query": "Are there any at-risk projects, and who is allocated to them?",
+    "rbac_allowed": true,
+    "expected_agent": "project_risk_agent",
+    "expected_tool": "get_project_risk_details",
+    "description": "Manager verifying project risks and team allocation"
+  },
+  {
+    "id": 2,
+    "role": "Reporting Manager",
+    "query": "Review and list pending employee leave approvals.",
+    "rbac_allowed": false,
+    "expected_agent": "hr_agent",
+    "expected_tool": "get_pending_leaves",
+    "description": "Manager checking pending leave approvals (requires HR role)"
+  },
+  {
+    "id": 3,
+    "role": "Reporting Manager",
+    "query": "Identify which projects are at risk and recommend resources to add to them.",
+    "rbac_allowed": true,
+    "expected_agent": "project_risk_agent",
+    "expected_tool": "get_risk_recommendations",
+    "description": "Manager querying cross-agent risk/resource optimization"
+  },
+  {
+    "id": 4,
+    "role": "Reporting Manager",
+    "query": "Show me the skill gap analysis for my team on the Yottaflex AI Migration project.",
+    "rbac_allowed": true,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_project_skill_gap",
+    "description": "Manager pulling skill gap analysis for a project"
+  },
+  {
+    "id": 5,
+    "role": "Reporting Manager",
+    "query": "Is there a skill gap for my team in JavaScript or React?",
+    "rbac_allowed": true,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_team_skill_gap",
+    "description": "Manager querying skill gaps in development tools"
+  },
+  {
+    "id": 6,
+    "role": "Reporting Manager",
+    "query": "List all timesheet submissions for my direct reports from last week.",
+    "rbac_allowed": true,
+    "expected_agent": "manager_agent",
+    "expected_tool": "get_team_timesheets",
+    "description": "Manager querying timesheets of direct reports"
+  },
+  {
+    "id": 7,
+    "role": "Reporting Manager",
+    "query": "Show me the total payroll budget for all departments.",
+    "rbac_allowed": false,
+    "expected_agent": "executive_agent",
+    "expected_tool": "get_payroll_summary",
+    "description": "Manager attempting to access unauthorized financial payroll budget data"
+  },
+  {
+    "id": 8,
+    "role": "Reporting Manager",
+    "query": "List all active members in my department.",
+    "rbac_allowed": true,
+    "expected_agent": "manager_agent",
+    "expected_tool": "get_department_members",
+    "description": "Manager listing department team members"
+  },
+  {
+    "id": 9,
+    "role": "Reporting Manager",
+    "query": "Approve timesheet with ID 104.",
+    "rbac_allowed": true,
+    "expected_agent": "manager_agent",
+    "expected_tool": "approve_timesheet",
+    "description": "Manager approving a timesheet entry"
+  },
+  {
+    "id": 10,
+    "role": "Reporting Manager",
+    "query": "Reject timesheet with ID 105 due to insufficient hours logged.",
+    "rbac_allowed": true,
+    "expected_agent": "manager_agent",
+    "expected_tool": "reject_timesheet",
+    "description": "Manager rejecting a timesheet entry"
+  },
+  {
+    "id": 11,
+    "role": "Reporting Manager",
+    "query": "What are the project delivery statuses for Q2 projects?",
+    "rbac_allowed": true,
+    "expected_agent": "project_risk_agent",
+    "expected_tool": "get_project_statuses",
+    "description": "Manager requesting project status reports"
+  },
+  {
+    "id": 12,
+    "role": "Reporting Manager",
+    "query": "Recommend available resources to allocate to Yottaflex AI Migration.",
+    "rbac_allowed": true,
+    "expected_agent": "resource_optimization_agent",
+    "expected_tool": "get_matching_bench_resources",
+    "description": "Manager checking resource optimization"
+  },
+  {
+    "id": 13,
+    "role": "Reporting Manager",
+    "query": "List all leaves submitted by my team members this week.",
+    "rbac_allowed": true,
+    "expected_agent": "manager_agent",
+    "expected_tool": "get_team_leaves",
+    "description": "Manager monitoring team leave requests"
+  },
+  {
+    "id": 14,
+    "role": "Reporting Manager",
+    "query": "Show me the average billable utilization of my team.",
+    "rbac_allowed": true,
+    "expected_agent": "manager_agent",
+    "expected_tool": "get_team_utilization",
+    "description": "Manager auditing team utilization"
+  },
+  {
+    "id": 15,
+    "role": "Reporting Manager",
+    "query": "Can I get direct write access to database employee records?",
+    "rbac_allowed": false,
+    "expected_agent": "manager_agent",
+    "expected_tool": "direct_db_write",
+    "description": "Manager trying to perform unauthorized direct DB writes"
+  },
+  {
+    "id": 16,
+    "role": "Reporting Manager",
+    "query": "Check if anyone on my team has a skill gap in Kubernetes.",
+    "rbac_allowed": true,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_team_skill_gap",
+    "description": "Manager checking technical team skill gaps"
+  },
+  {
+    "id": 17,
+    "role": "Reporting Manager",
+    "query": "Find the total hours logged on Enterprise Dashboard V2 by my team.",
+    "rbac_allowed": true,
+    "expected_agent": "manager_agent",
+    "expected_tool": "get_project_logged_hours",
+    "description": "Manager reviewing total project logged hours"
+  }
+]

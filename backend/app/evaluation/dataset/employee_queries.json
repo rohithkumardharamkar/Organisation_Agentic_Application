@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1,
+    "role": "Employee",
+    "query": "Show me the list of technical skills available in the organization.",
+    "rbac_allowed": false,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_all_skills",
+    "description": "Employee attempting to view all organization technical skills"
+  },
+  {
+    "id": 2,
+    "role": "Employee",
+    "query": "Who is allocated to the Yottaflex AI Migration project?",
+    "rbac_allowed": false,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_project_allocations",
+    "description": "Employee checking project allocations without permission"
+  },
+  {
+    "id": 3,
+    "role": "Employee",
+    "query": "How many hours did I log on timesheets last week?",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_employee_timesheets",
+    "description": "Employee querying personal timesheet hours logged"
+  },
+  {
+    "id": 4,
+    "role": "Employee",
+    "query": "What is my current role designation and joining date?",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_employee_profile",
+    "description": "Employee checking personal profile metadata"
+  },
+  {
+    "id": 5,
+    "role": "Employee",
+    "query": "Suggest learning pathways based on my current skills.",
+    "rbac_allowed": false,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_skill_recommendations",
+    "description": "Employee requesting skill recommendations without authorization"
+  },
+  {
+    "id": 6,
+    "role": "Employee",
+    "query": "How do I request a new skill review or update my profile?",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": null,
+    "description": "Employee asking self-service profile update policy"
+  },
+  {
+    "id": 7,
+    "role": "Employee",
+    "query": "How many leaves do I have left for this year?",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_leave_balance",
+    "description": "Employee checking personal leave balance"
+  },
+  {
+    "id": 8,
+    "role": "Employee",
+    "query": "Submit a sick leave request from tomorrow to Friday.",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "submit_leave_request",
+    "description": "Employee submitting a leave request"
+  },
+  {
+    "id": 9,
+    "role": "Employee",
+    "query": "Check if my timesheet for the current week has been approved.",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_timesheet_status",
+    "description": "Employee checking personal timesheet status"
+  },
+  {
+    "id": 10,
+    "role": "Employee",
+    "query": "What is the contact email of my reporting manager?",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_manager_info",
+    "description": "Employee looking up manager information"
+  },
+  {
+    "id": 11,
+    "role": "Employee",
+    "query": "Can I see my department's overall project allocation summary?",
+    "rbac_allowed": false,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_department_projects",
+    "description": "Employee checking department projects without access"
+  },
+  {
+    "id": 12,
+    "role": "Employee",
+    "query": "I want to log 8 hours for each day last week on Yottaflex Migration.",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "log_timesheet_hours",
+    "description": "Employee logging hours to timesheet"
+  },
+  {
+    "id": 13,
+    "role": "Employee",
+    "query": "List all active projects in the organization.",
+    "rbac_allowed": false,
+    "expected_agent": "employee_agent",
+    "expected_tool": "list_all_projects",
+    "description": "Employee trying to view all company projects"
+  },
+  {
+    "id": 14,
+    "role": "Employee",
+    "query": "Is my office location registered as Bangalore or Noida?",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_employee_profile",
+    "description": "Employee querying personal office location"
+  },
+  {
+    "id": 15,
+    "role": "Employee",
+    "query": "Show my logged skills and their proficiency levels.",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_employee_skills",
+    "description": "Employee checking personal skill proficiencies"
+  },
+  {
+    "id": 16,
+    "role": "Employee",
+    "query": "Submit timesheet diagnostics for my current tasks.",
+    "rbac_allowed": false,
+    "expected_agent": "process_agent",
+    "expected_tool": "run_timesheet_diagnostics",
+    "description": "Employee trying to run process engineering diagnostics"
+  },
+  {
+    "id": 17,
+    "role": "Employee",
+    "query": "How many days of paid vacation leave do I have remaining?",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_leave_balance",
+    "description": "Employee checking paid vacation leave balance"
+  }
+]

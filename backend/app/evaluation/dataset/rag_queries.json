@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1,
+    "role": "Process Engineer",
+    "query": "What is the standard sprint process standard defined in our documentation?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Process Engineer asking RAG knowledge base for sprint process"
+  },
+  {
+    "id": 2,
+    "role": "Employee",
+    "query": "What is the company policy on remote work and internet reimbursement?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Employee asking policy information from RAG"
+  },
+  {
+    "id": 3,
+    "role": "Process Engineer",
+    "query": "How do we handle sprint planning deviations according to the playbook?",
+    "rbac_allowed": true,
+    "expected_agent": "process_agent",
+    "expected_tool": "query_playbook",
+    "description": "Process Engineer checking playbook standard operating procedures"
+  },
+  {
+    "id": 4,
+    "role": "Employee",
+    "query": "What is the standard onboarding process for new developers at Yottaflex?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Employee querying developer onboarding handbook"
+  },
+  {
+    "id": 5,
+    "role": "Employee",
+    "query": "Find the company policy regarding maternity and paternity leave length.",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Employee checking parental leave handbook policies"
+  },
+  {
+    "id": 6,
+    "role": "HR",
+    "query": "Where is the documentation for standard performance appraisal timelines?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "HR querying performance evaluation timelines documentation"
+  },
+  {
+    "id": 7,
+    "role": "Reporting Manager",
+    "query": "What are the rules for allocating cross-departmental resources according to operational guides?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Manager asking about cross-department resource allocation policies"
+  },
+  {
+    "id": 8,
+    "role": "Process Engineer",
+    "query": "What metrics are mandated for timesheet quality SLA reviews?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Process Engineer checking timesheet quality SLA policies"
+  },
+  {
+    "id": 9,
+    "role": "Employee",
+    "query": "How many days of paid sick leave can be rolled over to next year?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Employee asking roll-over sick leave policy"
+  },
+  {
+    "id": 10,
+    "role": "HR",
+    "query": "What is the policy for reporting safety violations or security breaches?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "HR looking up security breach reporting policy"
+  },
+  {
+    "id": 11,
+    "role": "Employee",
+    "query": "Does Yottaflex provide reimbursements for professional training courses?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Employee checking training courses reimbursement policy"
+  },
+  {
+    "id": 12,
+    "role": "Reporting Manager",
+    "query": "What is the maximum budget limit for team building events according to finance rules?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Manager checking team building finance rules"
+  },
+  {
+    "id": 13,
+    "role": "Process Engineer",
+    "query": "What standard operating procedures exist for code review and release branches?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Process Engineer querying code review SOPs"
+  },
+  {
+    "id": 14,
+    "role": "Employee",
+    "query": "Can I work remotely from outside my home location for more than 30 days?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Employee checking long term remote work handbook policies"
+  },
+  {
+    "id": 15,
+    "role": "HR",
+    "query": "Is there a policy on conflict resolution and workplace arbitration?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "HR checking conflict resolution policies"
+  },
+  {
+    "id": 16,
+    "role": "Employee",
+    "query": "Show me the process of logging timesheets if I was on vacation leave.",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Employee querying leave logging playbook instructions"
+  },
+  {
+    "id": 17,
+    "role": "Reporting Manager",
+    "query": "What is the standard escalation workflow for delayed project deliverables?",
+    "rbac_allowed": true,
+    "expected_agent": "knowledge_agent",
+    "expected_tool": "query_knowledge_base",
+    "description": "Manager checking delay escalation policies"
+  }
+]

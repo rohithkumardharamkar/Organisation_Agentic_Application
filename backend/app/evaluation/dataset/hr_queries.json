@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1,
+    "role": "HR",
+    "query": "Which employees have 'Expert' proficiency in Python?",
+    "rbac_allowed": true,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "query_skills",
+    "description": "HR querying skill intelligence"
+  },
+  {
+    "id": 2,
+    "role": "HR",
+    "query": "Identify the active projects that are currently 'At Risk'.",
+    "rbac_allowed": true,
+    "expected_agent": "project_risk_agent",
+    "expected_tool": "get_at_risk_projects",
+    "description": "HR checking high-level project statuses"
+  },
+  {
+    "id": 3,
+    "role": "HR",
+    "query": "Provide a summary of the leaves requested and approved this month.",
+    "rbac_allowed": true,
+    "expected_agent": "hr_agent",
+    "expected_tool": "get_monthly_leaves",
+    "description": "HR pulling leave reports"
+  },
+  {
+    "id": 4,
+    "role": "HR",
+    "query": "Identify any mid-level software engineers available to allocate.",
+    "rbac_allowed": true,
+    "expected_agent": "resource_optimization_agent",
+    "expected_tool": "get_bench_resources",
+    "description": "HR looking for available resources"
+  },
+  {
+    "id": 5,
+    "role": "HR",
+    "query": "Give me the total count of active employees in Bangalore.",
+    "rbac_allowed": true,
+    "expected_agent": "employee_agent",
+    "expected_tool": "get_headcount_stats",
+    "description": "HR pulling total headcount by location"
+  },
+  {
+    "id": 6,
+    "role": "HR",
+    "query": "Generate a list of all employees currently on bench status.",
+    "rbac_allowed": true,
+    "expected_agent": "resource_optimization_agent",
+    "expected_tool": "get_bench_resources",
+    "description": "HR querying employees on bench"
+  },
+  {
+    "id": 7,
+    "role": "HR",
+    "query": "What are the core skill sets of our senior leadership team?",
+    "rbac_allowed": true,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_leadership_skills",
+    "description": "HR querying skills of leadership"
+  },
+  {
+    "id": 8,
+    "role": "HR",
+    "query": "List all active employees who have not logged timesheets this week.",
+    "rbac_allowed": true,
+    "expected_agent": "hr_agent",
+    "expected_tool": "get_timesheet_defaulters",
+    "description": "HR auditing timesheet compliance"
+  },
+  {
+    "id": 9,
+    "role": "HR",
+    "query": "What is the average employee retention or tenure in Bangalore?",
+    "rbac_allowed": true,
+    "expected_agent": "hr_agent",
+    "expected_tool": "get_retention_metrics",
+    "description": "HR analyzing employee tenure"
+  },
+  {
+    "id": 10,
+    "role": "HR",
+    "query": "Review all pending leave approvals for the Engineering department.",
+    "rbac_allowed": true,
+    "expected_agent": "hr_agent",
+    "expected_tool": "get_pending_leaves",
+    "description": "HR reviewing pending leave approvals"
+  },
+  {
+    "id": 11,
+    "role": "HR",
+    "query": "What is the ratio of Junior to Senior Engineers in the organization?",
+    "rbac_allowed": true,
+    "expected_agent": "hr_agent",
+    "expected_tool": "get_demographics_ratio",
+    "description": "HR querying seniority distribution demographics"
+  },
+  {
+    "id": 12,
+    "role": "HR",
+    "query": "Recommend resources to optimize the bench budget.",
+    "rbac_allowed": true,
+    "expected_agent": "resource_optimization_agent",
+    "expected_tool": "get_bench_analysis",
+    "description": "HR requesting bench budget optimization recommendations"
+  },
+  {
+    "id": 13,
+    "role": "HR",
+    "query": "Show the list of all certifications held by the Process Engineering team.",
+    "rbac_allowed": true,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_certifications",
+    "description": "HR querying certifications"
+  },
+  {
+    "id": 14,
+    "role": "HR",
+    "query": "Get the top 5 skills that have the largest skill gap in the organization.",
+    "rbac_allowed": true,
+    "expected_agent": "skill_intelligence_agent",
+    "expected_tool": "get_major_skill_gaps",
+    "description": "HR reviewing overall skill gaps"
+  },
+  {
+    "id": 15,
+    "role": "HR",
+    "query": "Identify high-risk projects that have low resource allocations.",
+    "rbac_allowed": true,
+    "expected_agent": "project_risk_agent",
+    "expected_tool": "get_risk_allocations",
+    "description": "HR querying at-risk projects due to resource shortages"
+  },
+  {
+    "id": 16,
+    "role": "HR",
+    "query": "Update the default organization remote work allowance policy in database.",
+    "rbac_allowed": false,
+    "expected_agent": "hr_agent",
+    "expected_tool": "update_policy_record",
+    "description": "HR trying to alter core policy DB tables directly"
+  },
+  {
+    "id": 17,
+    "role": "HR",
+    "query": "Show me the list of employees who requested sick leave last week.",
+    "rbac_allowed": true,
+    "expected_agent": "hr_agent",
+    "expected_tool": "get_leave_reports",
+    "description": "HR reviewing sick leave history"
+  }
+]
